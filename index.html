@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oregon Trail</title>
+
+<style>
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    overflow: hidden;
+}
+
+/* Fullscreen container */
+#dosbox {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+/* FORCE canvas to scale correctly */
+#dosbox canvas {
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: contain; /* keeps aspect ratio (no distortion) */
+}
+</style>
+</head>
+<body>
+
+<div id="dosbox"></div>
+
+<!-- DOSBox build -->
+<script src="js-dos-api.js"></script>
+
+<script>
+let dosbox;
+
+window.onload = () => {
+    dosbox = new Dosbox({
+        id: "dosbox",
+        onload: function (dosbox) {
+            dosbox.run(
+                "Oregon_The_1990.zip",
+                "OREGON.EXE"
+            );
+        },
+        onrun: function (dosbox, app) {
+            console.log("Running:", app);
+        }
+    });
+};
+</script>
+
+</body>
+</html>
