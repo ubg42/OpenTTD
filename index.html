@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oregon Trail 1990 - JS-DOS</title>
+
+    <script src="https://v8.js-dos.com/latest/js-dos.js"></script>
+
+    <style>
+        html, body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            overflow: hidden;
+        }
+
+        #dos {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+<div id="dos"></div>
+
+<script>
+Dos(document.getElementById("dos"), {
+    url: "https://archive.org/download/oregon-the-1990/Oregon%20Trail%20%281990%29%28Mecc%29.zip",
+});
+</script>
+
+</body>
+</html>
